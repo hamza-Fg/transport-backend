@@ -28,4 +28,16 @@ public class CamionController {
     public Camion getCamionById(@PathVariable Long id) {
         return camionService.getCamionById(id);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteCamion(@PathVariable Long id) {
+    camionService.deleteCamion(id);
+    }
+
+    @PutMapping("/{id}")
+    public Camion updateCamion(@PathVariable Long id, @RequestBody Camion updatedCamion) {
+    return camionService.updateCamion(id, updatedCamion);
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package com.example.bac.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,6 +21,7 @@ public class Camion {
     @Column(name = "nom_camion")
     private String nomCamion;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "camion", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Course> courses;
 
