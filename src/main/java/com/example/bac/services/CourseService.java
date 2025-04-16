@@ -24,4 +24,8 @@ public class CourseService {
     public Course getCourseById(Long id) {
         return courseRepository.findById(id).orElse(null);
     }
+
+    public List<Course> getCoursesByCamionId(Long camionId) {
+        return courseRepository.findByCamionId(camionId);
+    }
 }
